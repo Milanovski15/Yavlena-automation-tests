@@ -29,23 +29,23 @@ class BrokersPageTests {
     @BeforeAll
     public static void setUp() throws InterruptedException {
         driver = DriverFactory.initializeDriver("chrome");
-        driver.manage().window().maximize();
-        driver.get(Configuration.BROKERS_URL);
         brokersPage = new BrokersPage(driver);
-        brokersPage.acceptCookies();
+        brokersPage.navigateTo(Configuration.BROKERS_URL);
 
+        brokersPage.acceptCookies();
         brokersPage.scrollTillTheEndOfPage();
 
         brokerList = brokersPage.everyBrokerName();
+
         driver.quit();
     }
 
     @BeforeEach
     public void setUpp() {
         driver = DriverFactory.initializeDriver("chrome");
-        driver.manage().window().maximize();
-        driver.get(Configuration.BROKERS_URL);
         brokersPage = new BrokersPage(driver);
+        brokersPage.navigateTo(Configuration.BROKERS_URL);
+
         brokersPage.acceptCookies();
     }
 

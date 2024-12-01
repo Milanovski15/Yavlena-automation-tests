@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import util.Configuration;
 
 import java.util.NoSuchElementException;
 
@@ -15,6 +16,11 @@ public abstract class BasePage {
     public BasePage(WebDriver driver){
         this.driver = driver;
         this.actions = new Actions(driver);
+    }
+
+    public void navigateTo(String url) {
+        driver.manage().window().maximize();
+        driver.get(url);
     }
 
     public void writeToField(By element, String text){
@@ -38,4 +44,5 @@ public abstract class BasePage {
         Thread.sleep(5000);
         driver.findElement(By.tagName("body")).sendKeys(Keys.END);
     }
+
 }
