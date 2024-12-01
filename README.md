@@ -1,6 +1,6 @@
 # Description
 This framework covers the Brokers part of the "https://www.yavlena.com/en/broker?city=Sofia" web page
-The tests are written in TypeScript using Playwright.
+The tests are written in Java using Selenium.
 
 # Prerequisites
 Java, Maven, Java SDK
